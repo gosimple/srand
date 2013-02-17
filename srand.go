@@ -17,7 +17,7 @@ func init() {
 	rand.Seed(time.Now().UTC().UnixNano())
 }
 
-// IntFT returns a random non-negative number from min to max
+// IntFT returns a non-negative random number from min to max
 // (0 <= min <= nr <= max).
 // Will return 0 if max < 0
 func IntFT(min, max int) int {
@@ -38,15 +38,30 @@ func IntFT(min, max int) int {
 	return choice
 }
 
-// IntFTSample returns a slice of random non-negative numbers from min to max.
-func IntFTSample(min, max, amount int) (sample []int) {
-	for i := 0; i < amount; i++ {
-		sample = append(sample, IntFT(min, max))
+//func IntFTChoice(min, max int) int {
+//	return IntFT(min, max int)
+//}
+
+// IntFTMany returns a slice of non-negative random numbers from min to max.
+func IntFTMany(min, max, quantity int) (out []int) {
+	for i := 0; i < quantity; i++ {
+		out = append(out, IntFT(min, max))
 	}
-	return sample
+	return out
 }
 
-// IntBT returns a random number between min to max (0 <= min < nr < max).
+// IntFTSample returns a slice of non-negative random, unique numbers
+// from min to max. If the quantity is bigger than max - min sample size
+// will be the size of max - min.
+//func IntFTSample(min, max, quantity int) (sample []int) {
+//	for i := 0; i < quantity; i++ {
+//		sample = append(sample, IntFT(min, max))
+//	}
+//	return sample
+//}
+
+// IntBT returns a non-negative random number between min and max
+// (0 <= min < nr < max).
 // Will return 0 if max < 0
 func IntBT(min, max int) int {
 	min += 1
@@ -65,4 +80,17 @@ func IntBT(min, max int) int {
 		choice = min
 	}
 	return choice
+}
+
+//func IntBTChoice(min, max int) int {
+//	return IntBT(min, max int)
+//}
+
+// IntBTMany returns a slice of non-negative random numbers between
+// min and max.
+func IntBTMany(min, max, quantity int) (out []int) {
+	for i := 0; i < quantity; i++ {
+		out = append(out, IntBT(min, max))
+	}
+	return out
 }
