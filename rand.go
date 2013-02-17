@@ -17,7 +17,7 @@ func init() {
 	rand.Seed(time.Now().UTC().UnixNano())
 }
 
-// IntFT returns a random number from min to max (0 <= min <= nr <= max)
+// IntFT returns a random number from min to max (0 <= min <= nr <= max).
 // Will return 0 if max < 0
 func IntFT(min, max int) int {
 	var choice int
@@ -37,7 +37,7 @@ func IntFT(min, max int) int {
 	return choice
 }
 
-// IntBT returns a random number between min to max (min < nr < max)
+// IntBT returns a random number between min to max (min < nr < max).
 // Will return 0 if max < 0
 func IntBT(min, max int) int {
 	min += 1

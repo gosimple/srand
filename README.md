@@ -1,11 +1,11 @@
 rand
 ====
 
-Package rand simplify chosing random values.
+Package rand simplify choosing random values.
 
 [Documentation online](http://godoc.org/bitbucket.org/gosimple/rand)
 
-	nr := rand.IntFT(10, 20)	// 10 <= nr <= 20
+	ft := rand.IntFT(10, 20)	// 10 <= ft <= 20
 	bt := rand.IntBT(10, 20)	// 10 < bt < 20
 
 ### Requests or bugs? 
