@@ -1,19 +1,19 @@
-rand
-====
+srand - simple rand
+===================
 
-Package rand simplify choosing random values.
+Package srand simplify choosing random values.
 
-[Documentation online](http://godoc.org/bitbucket.org/gosimple/rand)
+[Documentation online](http://godoc.org/bitbucket.org/gosimple/srand)
 
-	ft := rand.IntFT(10, 20)	// 10 <= ft <= 20
-	bt := rand.IntBT(10, 20)	// 10 < bt < 20
+	ft := srand.IntFT(10, 20)	// 10 <= ft <= 20
+	bt := srand.IntBT(10, 20)	// 10 < bt < 20
 
 ### Requests or bugs? 
-<https://bitbucket.org/gosimple/rand/issues>
+<https://bitbucket.org/gosimple/srand/issues>
 
 ## Installation
 
-	go get -u bitbucket.org/gosimple/rand
+	go get -u bitbucket.org/gosimple/srand
 
 ## License
 
