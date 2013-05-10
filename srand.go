@@ -49,9 +49,39 @@ func IntMany(min, max, quantity int) (out []int) {
 // IntSample returns a slice of non-negative random, unique numbers
 // from min to max. If the quantity is bigger than max - min sample size
 // will be the size of max - min.
-//func IntSample(min, max, quantity int) (sample []int) {
-//	for i := 0; i < quantity; i++ {
-//		sample = append(sample, Int(min, max))
-//	}
-//	return sample
-//}
+func IntSample(min, max, quantity int) (sample []int) {
+	if max < 0 {
+		return []int{0}
+	}
+	if min < 0 {
+		min = 0
+	}
+	maxQuantity := max - min
+	if maxQuantity > quantity {
+		maxQuantity = quantity
+	}
+	i := 0
+	for {
+		rand.Seed(time.Now().UTC().UnixNano() + int64(i))
+		randNum := Int(min, max)
+		if !containsInt(sample, randNum) {
+			sample = append(sample, randNum)
+			i++
+		} else {
+			continue
+		}
+		if i == maxQuantity {
+			break
+		}
+	}
+	return sample
+}
+
+func containsInt(list []int, elem int) bool {
+	for _, t := range list {
+		if t == elem {
+			return true
+		}
+	}
+	return false
+}
