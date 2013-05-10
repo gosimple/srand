@@ -86,3 +86,42 @@ func containsInt(list []int, elem int) bool {
 	}
 	return false
 }
+
+//=============================================================================
+
+var (
+	// rfc1924
+	BASE85 = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!#$%&()*+-;<=>?@^_`{|}~"
+
+	// rfc4648 alphabets
+	BASE16    = BASE85[:16]
+	BASE32    = "ABCDEFGHIJKLMNOPQRSTUVWXYZ234567"
+	BASE32HEX = BASE85[:32]
+	BASE64    = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"
+	BASE64URL = BASE64[:62] + "-_"
+
+	// Only contain alphanumeric characters
+	BASE62 = BASE85[:62]
+)
+
+// String returns a random string with length from minLength to maxLength.
+// Use BASE62 alphabet by default.
+// Will return empty string if maxLength < 0
+func String(minLength, maxLength int) string {
+	var length int
+
+	if minLength < 0 {
+		minLength = 0
+	}
+	if maxLength < 0 {
+		return ""
+	}
+
+	length = Int(minLength, maxLength)
+
+	buf := make([]byte, length)
+	for i := 0; i < length; i++ {
+		buf[i] = BASE62[rand.Intn(len(BASE62)-1)]
+	}
+	return string(buf)
+}
