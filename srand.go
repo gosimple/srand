@@ -59,38 +59,3 @@ func IntFTMany(min, max, quantity int) (out []int) {
 //	}
 //	return sample
 //}
-
-// IntBT returns a non-negative random number between min and max
-// (0 <= min < nr < max).
-// Will return 0 if max < 0
-func IntBT(min, max int) int {
-	min += 1
-	var choice int
-
-	if max < 0 {
-		return 0
-	}
-	if min < 0 {
-		min = 0
-	}
-
-	if min < max {
-		choice = min + rand.Intn(max-min)
-	} else {
-		choice = min
-	}
-	return choice
-}
-
-//func IntBTChoice(min, max int) int {
-//	return IntBT(min, max int)
-//}
-
-// IntBTMany returns a slice of non-negative random numbers between
-// min and max.
-func IntBTMany(min, max, quantity int) (out []int) {
-	for i := 0; i < quantity; i++ {
-		out = append(out, IntBT(min, max))
-	}
-	return out
-}
