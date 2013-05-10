@@ -41,6 +41,7 @@ func Int(min, max int) int {
 // IntMany returns a slice of non-negative random numbers from min to max.
 func IntMany(min, max, quantity int) (out []int) {
 	for i := 0; i < quantity; i++ {
+		rand.Seed(time.Now().UTC().UnixNano() + int64(i))
 		out = append(out, Int(min, max))
 	}
 	return out
