@@ -45,7 +45,7 @@ func Int(min, max int) int {
 // IntMany returns a slice of non-negative random numbers from min to max.
 func IntMany(min, max, quantity int) (out []int) {
 	for i := 0; i < quantity; i++ {
-		out = append(out, IntFT(min, max))
+		out = append(out, Int(min, max))
 	}
 	return out
 }
@@ -55,7 +55,7 @@ func IntMany(min, max, quantity int) (out []int) {
 // will be the size of max - min.
 //func IntSample(min, max, quantity int) (sample []int) {
 //	for i := 0; i < quantity; i++ {
-//		sample = append(sample, IntFT(min, max))
+//		sample = append(sample, Int(min, max))
 //	}
 //	return sample
 //}
