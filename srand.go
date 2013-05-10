@@ -108,6 +108,13 @@ var (
 // Use BASE62 alphabet by default.
 // Will return empty string if maxLength < 0
 func String(minLength, maxLength int) string {
+	return StringA(minLength, maxLength, BASE62)
+}
+
+// StringA returns a random string with length from minLength to maxLength
+// containing only characters from provided alphabet.
+// Will return empty string if maxLength < 0
+func StringA(minLength, maxLength int, alphabet string) string {
 	var length int
 
 	if minLength < 0 {
@@ -121,7 +128,7 @@ func String(minLength, maxLength int) string {
 
 	buf := make([]byte, length)
 	for i := 0; i < length; i++ {
-		buf[i] = BASE62[rand.Intn(len(BASE62)-1)]
+		buf[i] = alphabet[rand.Intn(len(alphabet))]
 	}
 	return string(buf)
 }
