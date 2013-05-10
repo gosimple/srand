@@ -38,10 +38,6 @@ func Int(min, max int) int {
 	return choice
 }
 
-//func IntChoice(min, max int) int {
-//	return Int(min, max int)
-//}
-
 // IntMany returns a slice of non-negative random numbers from min to max.
 func IntMany(min, max, quantity int) (out []int) {
 	for i := 0; i < quantity; i++ {
