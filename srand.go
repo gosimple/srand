@@ -8,7 +8,7 @@
 //	package main
 //
 //	import (
-//		"bitbucket.org/gosimple/srand"
+//		"github.com/gosimple/srand"
 //		"fmt"
 //	)
 //
