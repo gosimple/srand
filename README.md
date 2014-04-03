@@ -3,12 +3,12 @@ srand - simple rand
 
 Package srand simplify choosing random values.
 
-[Documentation online](http://godoc.org/bitbucket.org/gosimple/srand)
+[Documentation online](http://godoc.org/github.com/gosimple/srand)
 
 	package main
 
 	import (
-		"bitbucket.org/gosimple/srand"
+		"github.com/gosimple/srand"
 		"fmt"
 	)
 
@@ -24,11 +24,11 @@ Package srand simplify choosing random values.
 
 
 ### Requests or bugs?
-<https://bitbucket.org/gosimple/srand/issues>
+<https://github.com/gosimple/srand/issues>
 
 ## Installation
 
-	go get -u bitbucket.org/gosimple/srand
+	go get -u github.com/gosimple/srand
 
 ## License
 
